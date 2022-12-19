@@ -19,20 +19,21 @@ namespace EmployeeWageProblem
             Random random = new Random();
             int EmpCheck = random.Next(0, 3);
 
-            if (FULL_TIME == EmpCheck)
+            switch(EmpCheck)
             {
-                Console.WriteLine("Full time Employee is present");
-                emphrs = 8;
-            }
-            else if(PART_TIME == EmpCheck)
-            {
-                Console.WriteLine("Part time employee is present");
-                emphrs = 4;
-            }
-            else
-            {
-                Console.WriteLine("Employee is absent ");
-                emphrs = 0;
+
+                case FULL_TIME:
+                    Console.WriteLine("Full time Employee is present");
+                    emphrs = 8;
+                    break;
+
+                case PART_TIME: 
+                    Console.WriteLine("Part time employee is present");
+                    emphrs = 4;
+                    break;
+               default:
+                    Console.WriteLine("employee is absent");
+                    break;
             }
             empwage = WAGE_PER_HOUR * emphrs;
             Console.WriteLine("Employee wage is :"+empwage);
