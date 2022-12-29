@@ -13,12 +13,12 @@ namespace EmployeeWageProblem
         static void Main(string[] args)
         {
             Console.WriteLine("welcome to Employeewage Computation");
-            Wage wage = new Wage();
-            wage.CalculateWage("microsoft",25,12,120);
-            Wage wage1 = new Wage();
-            wage1.CalculateWage("google",20,8,100);
-            Wage wage2 = new Wage();
-            wage2.CalculateWage("Facebook",23,10,150);
+            Wage byjus = new Wage("Byjus", 20, 8, 100);
+            Wage extra = new Wage("microsoft", 20, 8, 100);
+            byjus.CalculateWage();
+            Console.WriteLine(byjus.ToString());
+            extra.CalculateWage();
+            Console.WriteLine(extra.ToString());
             Console.ReadLine(); 
         }
         

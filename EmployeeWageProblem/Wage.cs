@@ -10,12 +10,22 @@ namespace EmployeeWageProblem
     {
         public const int FULL_TIME = 1;
         public const int PART_TIME = 2;
-        //public const int WAGE_PER_HOUR = 20;
-        //public const int MAX_WORKING_DAYS = 20;
-        //public const int MAX_WORKING_HOURS = 100;
-        public void CalculateWage(string Company,int MaxWorkingDays,int MaxWorkingHour,int WagePerHour)
+        private string Company;
+        private  int WagePerHour;
+        private  int MaxWorkingDays;
+        private  int MaxWorkingHour;
+        private int totalwage;
+
+        public Wage(string Company, int MaxWorkingDays, int MaxWorkingHour, int WagePerHour)
+        {
+            this.Company = Company;
+            this.WagePerHour =WagePerHour;
+            this.MaxWorkingDays = MaxWorkingDays;
+            this.MaxWorkingHour = MaxWorkingHour;
+        }
+        public void CalculateWage()
             {
-                int empwage = 0, emphrs = 0, day = 1, totalwage = 0, totalhour = 0;
+                int empwage = 0, emphrs = 0, day = 1,  totalhour = 0;
 
                 Random random = new Random();
 
@@ -42,8 +52,12 @@ namespace EmployeeWageProblem
                     day++;
                 }
                 Console.WriteLine("Toatl wage for {3} {0} days:{1} and hour is {2}",totalwage,(day-1), totalhour,Company);
-                Console.ReadLine();
-            }
-        
+               
+        }
+
+        public string toString()
+        {
+            return "Total Emp Wage for company : " + this.Company + " is " + this.totalwage;
+        }
     }
 }
